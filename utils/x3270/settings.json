@@ -1,0 +1,402 @@
+[
+  {
+    "key": "mode",
+    "group": "connection",
+    "type": "string",
+    "default": "local",
+    "label": "Configuration source",
+    "tooltip": "Local preserves normal x3270 startup and its saved settings. UMS uses the fields below at each launch; changes do not interrupt an existing connection.",
+    "choices": [
+      [
+        "local",
+        "Local / application defaults"
+      ],
+      [
+        "profile",
+        "UMS profile"
+      ]
+    ]
+  },
+  {
+    "key": "host",
+    "group": "connection",
+    "type": "string",
+    "default": "",
+    "label": "Server hostname or IP address",
+    "tooltip": "Host only; do not include a port, LU name, TLS prefix or URL. Bare or bracketed IPv6 is accepted. Empty opens the GUI without connecting."
+  },
+  {
+    "key": "port",
+    "group": "connection",
+    "type": "integer",
+    "default": "23",
+    "label": "Server port",
+    "tooltip": "TCP port, 1 through 65535. Set 992 or your site-specific port for direct TLS; changing connection mode does not change this value."
+  },
+  {
+    "key": "transport",
+    "group": "connection",
+    "type": "string",
+    "default": "auto",
+    "label": "Connection mode",
+    "tooltip": "Automatic allows TELNET STARTTLS negotiation but does not require encryption. Direct TLS encrypts from connection start. Plain disables STARTTLS.",
+    "choices": [
+      [
+        "auto",
+        "Automatic (STARTTLS if offered)"
+      ],
+      [
+        "tls",
+        "Direct TLS"
+      ],
+      [
+        "plain",
+        "Plain TN3270 (no STARTTLS)"
+      ]
+    ]
+  },
+  {
+    "key": "lu",
+    "group": "connection",
+    "type": "string",
+    "default": "",
+    "label": "LU name",
+    "tooltip": "Optional single LU / terminal identifier. Leave empty for host allocation. This is not a username."
+  },
+  {
+    "key": "tn3270e",
+    "group": "connection",
+    "type": "bool",
+    "default": "true",
+    "label": "Enable TN3270E",
+    "tooltip": "Unchecked adds the N: host prefix. Applies when a server is configured."
+  },
+  {
+    "key": "disconnect",
+    "group": "connection",
+    "type": "string",
+    "default": "stay",
+    "label": "On disconnect",
+    "tooltip": "Reconnect and exit require a configured server.",
+    "choices": [
+      [
+        "stay",
+        "Keep window open"
+      ],
+      [
+        "reconnect",
+        "Reconnect automatically"
+      ],
+      [
+        "exit",
+        "Close application"
+      ]
+    ]
+  },
+  {
+    "key": "verify_certificate",
+    "group": "security",
+    "type": "bool",
+    "default": "true",
+    "label": "Verify server certificate",
+    "tooltip": "Verify TLS trust and hostname. Uncheck only if you deliberately want unverified TLS."
+  },
+  {
+    "key": "ca_file",
+    "group": "security",
+    "type": "string",
+    "default": "",
+    "label": "CA certificate file (PEM)",
+    "tooltip": "Optional absolute endpoint path to a PEM CA bundle deployed using UMS Files. Empty uses the platform trust defaults."
+  },
+  {
+    "key": "model",
+    "group": "display",
+    "type": "string",
+    "default": "3279-4",
+    "label": "Terminal model",
+    "tooltip": "3278 is monochrome; 3279 is color. Host support determines the usable screen dimensions.",
+    "choices": [
+      [
+        "3278-2",
+        "3278-2 (80 x 24, monochrome)"
+      ],
+      [
+        "3278-3",
+        "3278-3 (80 x 32, monochrome)"
+      ],
+      [
+        "3278-4",
+        "3278-4 (80 x 43, monochrome)"
+      ],
+      [
+        "3278-5",
+        "3278-5 (132 x 27, monochrome)"
+      ],
+      [
+        "3279-2",
+        "3279-2 (80 x 24, color)"
+      ],
+      [
+        "3279-3",
+        "3279-3 (80 x 32, color)"
+      ],
+      [
+        "3279-4",
+        "3279-4 (80 x 43, color)"
+      ],
+      [
+        "3279-5",
+        "3279-5 (132 x 27, color)"
+      ]
+    ]
+  },
+  {
+    "key": "extended",
+    "group": "display",
+    "type": "bool",
+    "default": "true",
+    "label": "Extended data stream",
+    "tooltip": "Controls the extended terminal indication (-E). Disable only for hosts that require it."
+  },
+  {
+    "key": "codepage",
+    "group": "display",
+    "type": "string",
+    "default": "bracket",
+    "label": "Host EBCDIC code page",
+    "tooltip": "Single-byte code pages supported by x3270 4.5ga6. DBCS is omitted because this recipe does not configure dedicated DBCS fonts.",
+    "choices": [
+      [
+        "cp037",
+        "cp037"
+      ],
+      [
+        "cp1026",
+        "cp1026"
+      ],
+      [
+        "cp1047",
+        "cp1047"
+      ],
+      [
+        "cp1123",
+        "cp1123"
+      ],
+      [
+        "cp1140",
+        "cp1140"
+      ],
+      [
+        "cp1141",
+        "cp1141"
+      ],
+      [
+        "cp1142",
+        "cp1142"
+      ],
+      [
+        "cp1143",
+        "cp1143"
+      ],
+      [
+        "cp1144",
+        "cp1144"
+      ],
+      [
+        "cp1145",
+        "cp1145"
+      ],
+      [
+        "cp1146",
+        "cp1146"
+      ],
+      [
+        "cp1147",
+        "cp1147"
+      ],
+      [
+        "cp1148",
+        "cp1148"
+      ],
+      [
+        "cp1149",
+        "cp1149"
+      ],
+      [
+        "cp1158",
+        "cp1158"
+      ],
+      [
+        "cp1160",
+        "cp1160"
+      ],
+      [
+        "cp273",
+        "cp273"
+      ],
+      [
+        "cp275",
+        "cp275"
+      ],
+      [
+        "cp277",
+        "cp277"
+      ],
+      [
+        "cp278",
+        "cp278"
+      ],
+      [
+        "cp280",
+        "cp280"
+      ],
+      [
+        "cp284",
+        "cp284"
+      ],
+      [
+        "cp285",
+        "cp285"
+      ],
+      [
+        "cp297",
+        "cp297"
+      ],
+      [
+        "cp424",
+        "cp424"
+      ],
+      [
+        "cp500",
+        "cp500"
+      ],
+      [
+        "cp803",
+        "cp803"
+      ],
+      [
+        "cp870",
+        "cp870"
+      ],
+      [
+        "cp871",
+        "cp871"
+      ],
+      [
+        "cp875",
+        "cp875"
+      ],
+      [
+        "cp880",
+        "cp880"
+      ],
+      [
+        "bracket",
+        "bracket (x3270 default)"
+      ]
+    ]
+  },
+  {
+    "key": "font",
+    "group": "display",
+    "type": "string",
+    "default": "3270",
+    "label": "Terminal font",
+    "tooltip": "Select one of the 17 bundled 3270 bitmap fonts.",
+    "choices": [
+      [
+        "3270",
+        "3270"
+      ],
+      [
+        "3270-12",
+        "3270-12"
+      ],
+      [
+        "3270-12bold",
+        "3270-12bold"
+      ],
+      [
+        "3270-20",
+        "3270-20"
+      ],
+      [
+        "3270-20bold",
+        "3270-20bold"
+      ],
+      [
+        "3270bold",
+        "3270bold"
+      ],
+      [
+        "3270gr",
+        "3270gr"
+      ],
+      [
+        "3270gt8",
+        "3270gt8"
+      ],
+      [
+        "3270gt12",
+        "3270gt12"
+      ],
+      [
+        "3270gt12bold",
+        "3270gt12bold"
+      ],
+      [
+        "3270gt16",
+        "3270gt16"
+      ],
+      [
+        "3270gt16bold",
+        "3270gt16bold"
+      ],
+      [
+        "3270gt24",
+        "3270gt24"
+      ],
+      [
+        "3270gt24bold",
+        "3270gt24bold"
+      ],
+      [
+        "3270gt32",
+        "3270gt32"
+      ],
+      [
+        "3270gt32bold",
+        "3270gt32bold"
+      ],
+      [
+        "3270h",
+        "3270h"
+      ]
+    ]
+  },
+  {
+    "key": "keypad",
+    "group": "keyboard",
+    "type": "bool",
+    "default": "false",
+    "label": "Show on-screen keypad",
+    "tooltip": "Show the x3270 keypad at startup."
+  },
+  {
+    "key": "keymap_file",
+    "group": "keyboard",
+    "type": "string",
+    "default": "",
+    "label": "Custom keymap file",
+    "tooltip": "Absolute endpoint path to an X resource file, not a c3270/wc3270 plain translation file. Deploy separately with UMS Files; blank uses the standard keymap."
+  },
+  {
+    "key": "keymap_name",
+    "group": "keyboard",
+    "type": "string",
+    "default": "ums",
+    "label": "Keymap resource name",
+    "tooltip": "The name after x3270.keymap. in the resource file; for x3270.keymap.ums use ums. Only letters, digits, underscore and hyphen; do not use base. Ignored when the filepath is blank."
+  }
+]

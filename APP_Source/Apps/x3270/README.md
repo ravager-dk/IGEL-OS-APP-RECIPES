@@ -2,6 +2,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # [x3270](https://x3270.miraheze.org/wiki/Main_Page)
 
+## UMS profile configuration
+
+Recipe **4.5.6+1.7** adds typed connection, TLS, terminal and keyboard settings.
+See [PROFILE.md](PROFILE.md) for configuration, UMS keymap-file deployment and
+validation instructions. The existing `x3270.tar.bz2` payload remains unchanged.
+Select **Configuration source = UMS profile** to enable the new settings;
+normal local startup remains the default.
+
 ## Build x3270 from Docker container
 
 Summary of steps:

@@ -1,14 +1,22 @@
 {
   "root": {
     "id": "root",
-    "childrenIds": ["base"]
+    "childrenIds": [
+      "base"
+    ]
   },
   "base": {
     "id": "base",
     "parentId": "root",
     "nlsResourceId": "title",
     "title": "x3270",
-    "childrenIds": ["sessions"]
+    "childrenIds": [
+      "sessions",
+      "connection",
+      "security",
+      "display",
+      "keyboard"
+    ]
   },
   "sessions": {
     "id": "sessions",
@@ -22,6 +30,102 @@
         "type": "sessionPage",
         "paramId": "app.x3270.sessions.x3270",
         "instancePageId": "sessions.genericInstancePage"
+      }
+    }
+  },
+  "connection": {
+    "id": "connection",
+    "parentId": "base",
+    "nlsResourceId": "connection.label",
+    "title": "Connection",
+    "elements": {
+      "0": {
+        "type": "generic",
+        "paramId": "app.x3270.options.mode"
+      },
+      "1": {
+        "type": "generic",
+        "paramId": "app.x3270.options.host"
+      },
+      "2": {
+        "type": "generic",
+        "paramId": "app.x3270.options.port"
+      },
+      "3": {
+        "type": "generic",
+        "paramId": "app.x3270.options.transport"
+      },
+      "4": {
+        "type": "generic",
+        "paramId": "app.x3270.options.lu"
+      },
+      "5": {
+        "type": "generic",
+        "paramId": "app.x3270.options.tn3270e"
+      },
+      "6": {
+        "type": "generic",
+        "paramId": "app.x3270.options.disconnect"
+      }
+    }
+  },
+  "security": {
+    "id": "security",
+    "parentId": "base",
+    "nlsResourceId": "security.label",
+    "title": "TLS certificates",
+    "elements": {
+      "0": {
+        "type": "generic",
+        "paramId": "app.x3270.options.verify_certificate"
+      },
+      "1": {
+        "type": "generic",
+        "paramId": "app.x3270.options.ca_file"
+      }
+    }
+  },
+  "display": {
+    "id": "display",
+    "parentId": "base",
+    "nlsResourceId": "display.label",
+    "title": "Terminal and display",
+    "elements": {
+      "0": {
+        "type": "generic",
+        "paramId": "app.x3270.options.model"
+      },
+      "1": {
+        "type": "generic",
+        "paramId": "app.x3270.options.extended"
+      },
+      "2": {
+        "type": "generic",
+        "paramId": "app.x3270.options.codepage"
+      },
+      "3": {
+        "type": "generic",
+        "paramId": "app.x3270.options.font"
+      }
+    }
+  },
+  "keyboard": {
+    "id": "keyboard",
+    "parentId": "base",
+    "nlsResourceId": "keyboard.label",
+    "title": "Keyboard",
+    "elements": {
+      "0": {
+        "type": "generic",
+        "paramId": "app.x3270.options.keypad"
+      },
+      "1": {
+        "type": "generic",
+        "paramId": "app.x3270.options.keymap_file"
+      },
+      "2": {
+        "type": "generic",
+        "paramId": "app.x3270.options.keymap_name"
       }
     }
   }

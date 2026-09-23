@@ -1,0 +1,7 @@
+! x3270 4.5 X resource file. UMS Keymap resource name: ums
+! Add these bindings on top of the built-in base keymap.
+! Right Ctrl sends Enter; Ctrl+F1 sends PF13. Edit to suit your users.
+! The literal \n and trailing backslash are part of X resource syntax.
+x3270.keymap.ums: \
+    <Key>Control_R: Enter() \n\
+    Ctrl<Key>F1: PF(13)

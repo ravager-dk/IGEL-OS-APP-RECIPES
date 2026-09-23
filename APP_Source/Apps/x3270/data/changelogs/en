@@ -1,1 +1,3 @@
-x3270
+* Added typed UMS connection, TLS, terminal and keyboard settings.
+* Added custom keymap resource-file support through UMS file assignment.
+* Preserved normal local startup as the default configuration source.

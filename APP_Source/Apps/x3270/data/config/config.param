@@ -15,3 +15,129 @@
 		</type>
   </x32700>
 </sessions>
+<options>
+    <mode>
+        value=<local>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Configuration source>
+        tooltip[en_us]=<Local preserves normal x3270 startup and its saved settings. UMS uses the fields below at each launch; changes do not interrupt an existing connection.>
+        range=<[local]|[profile]>
+        range[en_us]=<[Local / application defaults][UMS profile]>
+    </mode>
+    <host>
+        value=<>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Server hostname or IP address>
+        tooltip[en_us]=<Host only; do not include a port, LU name, TLS prefix or URL. Bare or bracketed IPv6 is accepted. Empty opens the GUI without connecting.>
+    </host>
+    <port>
+        value=<23>
+        type=<integer>
+        runtime=<true>
+        displayname[en_us]=<Server port>
+        tooltip[en_us]=<TCP port, 1 through 65535. Set 992 or your site-specific port for direct TLS; changing connection mode does not change this value.>
+    </port>
+    <transport>
+        value=<auto>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Connection mode>
+        tooltip[en_us]=<Automatic allows TELNET STARTTLS negotiation but does not require encryption. Direct TLS encrypts from connection start. Plain disables STARTTLS.>
+        range=<[auto]|[tls]|[plain]>
+        range[en_us]=<[Automatic (STARTTLS if offered)][Direct TLS][Plain TN3270 (no STARTTLS)]>
+    </transport>
+    <lu>
+        value=<>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<LU name>
+        tooltip[en_us]=<Optional single LU / terminal identifier. Leave empty for host allocation. This is not a username.>
+    </lu>
+    <tn3270e>
+        value=<true>
+        type=<bool>
+        runtime=<true>
+        displayname[en_us]=<Enable TN3270E>
+        tooltip[en_us]=<Unchecked adds the N: host prefix. Applies when a server is configured.>
+    </tn3270e>
+    <disconnect>
+        value=<stay>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<On disconnect>
+        tooltip[en_us]=<Reconnect and exit require a configured server.>
+        range=<[stay]|[reconnect]|[exit]>
+        range[en_us]=<[Keep window open][Reconnect automatically][Close application]>
+    </disconnect>
+    <verify_certificate>
+        value=<true>
+        type=<bool>
+        runtime=<true>
+        displayname[en_us]=<Verify server certificate>
+        tooltip[en_us]=<Verify TLS trust and hostname. Uncheck only if you deliberately want unverified TLS.>
+    </verify_certificate>
+    <ca_file>
+        value=<>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<CA certificate file (PEM)>
+        tooltip[en_us]=<Optional absolute endpoint path to a PEM CA bundle deployed using UMS Files. Empty uses the platform trust defaults.>
+    </ca_file>
+    <model>
+        value=<3279-4>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Terminal model>
+        tooltip[en_us]=<3278 is monochrome; 3279 is color. Host support determines the usable screen dimensions.>
+        range=<[3278-2]|[3278-3]|[3278-4]|[3278-5]|[3279-2]|[3279-3]|[3279-4]|[3279-5]>
+        range[en_us]=<[3278-2 (80 x 24, monochrome)][3278-3 (80 x 32, monochrome)][3278-4 (80 x 43, monochrome)][3278-5 (132 x 27, monochrome)][3279-2 (80 x 24, color)][3279-3 (80 x 32, color)][3279-4 (80 x 43, color)][3279-5 (132 x 27, color)]>
+    </model>
+    <extended>
+        value=<true>
+        type=<bool>
+        runtime=<true>
+        displayname[en_us]=<Extended data stream>
+        tooltip[en_us]=<Controls the extended terminal indication (-E). Disable only for hosts that require it.>
+    </extended>
+    <codepage>
+        value=<bracket>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Host EBCDIC code page>
+        tooltip[en_us]=<Single-byte code pages supported by x3270 4.5ga6. DBCS is omitted because this recipe does not configure dedicated DBCS fonts.>
+        range=<[cp037]|[cp1026]|[cp1047]|[cp1123]|[cp1140]|[cp1141]|[cp1142]|[cp1143]|[cp1144]|[cp1145]|[cp1146]|[cp1147]|[cp1148]|[cp1149]|[cp1158]|[cp1160]|[cp273]|[cp275]|[cp277]|[cp278]|[cp280]|[cp284]|[cp285]|[cp297]|[cp424]|[cp500]|[cp803]|[cp870]|[cp871]|[cp875]|[cp880]|[bracket]>
+        range[en_us]=<[cp037][cp1026][cp1047][cp1123][cp1140][cp1141][cp1142][cp1143][cp1144][cp1145][cp1146][cp1147][cp1148][cp1149][cp1158][cp1160][cp273][cp275][cp277][cp278][cp280][cp284][cp285][cp297][cp424][cp500][cp803][cp870][cp871][cp875][cp880][bracket (x3270 default)]>
+    </codepage>
+    <font>
+        value=<3270>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Terminal font>
+        tooltip[en_us]=<Select one of the 17 bundled 3270 bitmap fonts.>
+        range=<[3270]|[3270-12]|[3270-12bold]|[3270-20]|[3270-20bold]|[3270bold]|[3270gr]|[3270gt8]|[3270gt12]|[3270gt12bold]|[3270gt16]|[3270gt16bold]|[3270gt24]|[3270gt24bold]|[3270gt32]|[3270gt32bold]|[3270h]>
+        range[en_us]=<[3270][3270-12][3270-12bold][3270-20][3270-20bold][3270bold][3270gr][3270gt8][3270gt12][3270gt12bold][3270gt16][3270gt16bold][3270gt24][3270gt24bold][3270gt32][3270gt32bold][3270h]>
+    </font>
+    <keypad>
+        value=<false>
+        type=<bool>
+        runtime=<true>
+        displayname[en_us]=<Show on-screen keypad>
+        tooltip[en_us]=<Show the x3270 keypad at startup.>
+    </keypad>
+    <keymap_file>
+        value=<>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Custom keymap file>
+        tooltip[en_us]=<Absolute endpoint path to an X resource file, not a c3270/wc3270 plain translation file. Deploy separately with UMS Files; blank uses the standard keymap.>
+    </keymap_file>
+    <keymap_name>
+        value=<ums>
+        type=<string>
+        runtime=<true>
+        displayname[en_us]=<Keymap resource name>
+        tooltip[en_us]=<The name after x3270.keymap. in the resource file; for x3270.keymap.ums use ums. Only letters, digits, underscore and hyphen; do not use base. Ignored when the filepath is blank.>
+    </keymap_name>
+</options>

@@ -1,10 +1,22 @@
 {
-    "sessions.label": {
-        "de": "Sitzung",
-        "en": "Session"
-    },
-    "title": {
-        "de": "x3270",
-        "en": "x3270"
-    }
+  "sessions.label": {
+    "de": "Sitzung",
+    "en": "Session"
+  },
+  "title": {
+    "de": "x3270",
+    "en": "x3270"
+  },
+  "connection.label": {
+    "en": "Connection"
+  },
+  "security.label": {
+    "en": "TLS certificates"
+  },
+  "display.label": {
+    "en": "Terminal and display"
+  },
+  "keyboard.label": {
+    "en": "Keyboard"
+  }
 }
