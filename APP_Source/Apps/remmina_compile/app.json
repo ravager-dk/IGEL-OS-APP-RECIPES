@@ -6,9 +6,9 @@
     "app": "app.svg",
     "monochrome": "monochrome.svg"
   },
-  "name": "cloudflare_warp",
+  "name": "remmina_compile",
   "author": "The IGEL community",
-  "vendor": "Cloudflare",
+  "vendor": "Remmina",
   "rw_partition": {
     "size": "small",
     "flags": [
@@ -17,7 +17,7 @@
   },
   "release": "",
   "summary": {
-    "en": "Cloudflare WARP (Community)"
+    "en": "Remmina Compile (Community)"
   },
-  "version": "2026.7.1377+1.0"
+  "version": "1.4.43+1.2"
 }
